@@ -57,6 +57,10 @@ export const stationValues = [
     station: 'Banlic',
     value: 29,
   },
+  {
+    station: 'Calamba',
+    value: 30,
+  },
 ];
 
 export const buildingLayerCategory = [

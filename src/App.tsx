@@ -69,7 +69,11 @@ function App() {
 
   // Segmented list
   const [stationSelected, setStationSelected] = useState<string>(stationValues[0].station);
-  const stationNames = [stationValues[0].station, stationValues[1].station];
+  const stationNames = [
+    stationValues[0].station,
+    stationValues[1].station,
+    stationValues[2].station,
+  ];
 
   useEffect(() => {
     if (activeWidget) {
