@@ -293,14 +293,14 @@ buildingLayer.when(() => {
       case 'SpecialtyEquipment':
         specialtyEquipmentLayer = layer;
         specialtyEquipmentLayer.popupTemplate = popuTemplate;
-        specialtyEquipmentLayer.title = 'StairsRailing';
+        specialtyEquipmentLayer.title = 'SpecialtyEquipment';
         specialtyEquipmentLayer.renderer = renderer;
         break;
 
       case 'StairsRailing':
         stairsRailingLayer = layer;
         stairsRailingLayer.popupTemplate = popuTemplate;
-        stairsRailingLayer.title = 'Stairs';
+        stairsRailingLayer.title = 'StairsRailing';
         stairsRailingLayer.renderer = renderer;
         break;
 
