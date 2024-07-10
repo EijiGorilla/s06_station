@@ -14,6 +14,7 @@ import { labelSymbol3DLine } from './Label';
 import BuildingSceneLayer from '@arcgis/core/layers/BuildingSceneLayer';
 import SolidEdges3D from '@arcgis/core/symbols/edges/SolidEdges3D';
 import { render } from '@testing-library/react';
+import SceneLayer from '@arcgis/core/layers/SceneLayer';
 
 /* Standalone table for Dates */
 export const dateTable = new FeatureLayer({
@@ -330,3 +331,55 @@ buildingLayer.when(() => {
     }
   });
 });
+
+// * Viaduct * //
+const colorViaduct = [
+  [225, 225, 225, 0.1], // To be Constructed (white)
+  [130, 130, 130, 0.5], // Under Construction
+  [255, 0, 0, 0.8], // Delayed
+  [0, 112, 255, 0.8], // Completed
+];
+
+function renderViaductLayer() {
+  const renderer = new UniqueValueRenderer({
+    field: 'Status',
+  });
+
+  for (var i = 0; i < colorViaduct.length; i++) {
+    renderer.addUniqueValueInfo({
+      value: i + 1,
+      symbol: new MeshSymbol3D({
+        symbolLayers: [
+          new FillSymbol3DLayer({
+            material: {
+              color: colorViaduct[i],
+              colorMixMode: 'replace',
+            },
+            edges: new SolidEdges3D({
+              color: [225, 225, 225, 0.3],
+            }),
+          }),
+        ],
+      }),
+    });
+  }
+  viaductLayer.renderer = renderer;
+}
+
+export const viaductLayer = new SceneLayer({
+  portalItem: {
+    id: '1f89733a04b443e2a1e0e5e6dfd493e3',
+    portal: {
+      url: 'https://gis.railway-sector.com/portal',
+    },
+  },
+  elevationInfo: {
+    mode: 'absolute-height', //absolute-height, relative-to-ground
+  },
+  title: 'Viaduct',
+  labelsVisible: false,
+  popupEnabled: false,
+  definitionExpression: "CP = 'S-06'",
+});
+
+renderViaductLayer();

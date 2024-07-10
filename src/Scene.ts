@@ -7,7 +7,14 @@ import Expand from '@arcgis/core/widgets/Expand';
 import GroupLayer from '@arcgis/core/layers/GroupLayer';
 import Compass from '@arcgis/core/widgets/Compass';
 import BuildingExplorer from '@arcgis/core/widgets/BuildingExplorer';
-import { buildingLayer, chainageLayer, pierNoLayer, rowLayer, stationLayer } from './layers';
+import {
+  buildingLayer,
+  chainageLayer,
+  pierNoLayer,
+  rowLayer,
+  stationLayer,
+  viaductLayer,
+} from './layers';
 import TimeSlider from '@arcgis/core/widgets/TimeSlider';
 import {
   floorsLayer,
@@ -31,6 +38,7 @@ const alignmentGroupLayer = new GroupLayer({
   layers: [chainageLayer, pierNoLayer, rowLayer], //stationLayer,
 });
 
+map.add(viaductLayer);
 map.add(buildingLayer);
 map.add(alignmentGroupLayer);
 map.add(stationLayer);
@@ -92,7 +100,7 @@ export const layerList = new LayerList({
     //   };
     // }
 
-    item.title === 'Chainage' || item.title === 'Pier No'
+    item.title === 'Chainage' || item.title === 'Pier No' || item.title === 'Viaduct'
       ? (item.visible = false)
       : (item.visible = true);
   },
