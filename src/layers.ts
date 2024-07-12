@@ -233,7 +233,7 @@ export const popuTemplate = {
 };
 
 const colorStatus = [
-  [225, 225, 225, 0.1], // To be Constructed (white)
+  [225, 225, 225, 0.5], // To be Constructed (white), default = 0.1
   [130, 130, 130, 0.5], // Under Construction
   [255, 0, 0, 0.8], // Delayed
   [0, 112, 255, 0.8], // Completed
@@ -254,7 +254,7 @@ for (var i = 0; i < colorStatus.length; i++) {
             colorMixMode: 'replace',
           },
           edges: new SolidEdges3D({
-            color: [225, 225, 225, 0.3],
+            color: [225, 225, 225, 0.8], // default = 0.3
           }),
         }),
       ],
@@ -334,7 +334,7 @@ buildingLayer.when(() => {
 
 // * Viaduct * //
 const colorViaduct = [
-  [225, 225, 225, 0.1], // To be Constructed (white)
+  [225, 225, 225, 0.8], // To be Constructed (white), default = 0.1
   [130, 130, 130, 0.5], // Under Construction
   [255, 0, 0, 0.8], // Delayed
   [0, 112, 255, 0.8], // Completed
