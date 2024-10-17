@@ -5,8 +5,8 @@
   "private": true,
   "dependencies": {
     "@amcharts/amcharts5": "^5.9.3",
-    "@arcgis/core": "^4.29.10",
-    "@esri/calcite-components-react": "^2.7.1",
+    "@arcgis/core": "^4.30.9",
+    "@esri/calcite-components-react": "^2.8.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

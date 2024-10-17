@@ -81,7 +81,7 @@ const buildingExplorer = new BuildingExplorer({
 export const buildingExplorerExpand = new Expand({
   view,
   content: buildingExplorer,
-  expandIconClass: 'esri-icon-layers',
+  expandIcon: 'chevrons-right',
   expandTooltip: 'Building Explorer',
 });
 
