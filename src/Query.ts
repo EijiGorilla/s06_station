@@ -91,7 +91,6 @@ export const layerVisibleTrue = () => {
 };
 
 export async function generateChartData(station: any) {
-  console.log(station);
   var total_incomp = new StatisticDefinition({
     onStatisticField: 'CASE WHEN Status = 1 THEN 1 ELSE 0 END',
     outStatisticFieldName: 'total_incomp',

@@ -369,7 +369,7 @@ const Chart = (station: any) => {
           alt="Utility Logo"
           height={'55px'}
           width={'55px'}
-          style={{ marginLeft: '75%', display: 'flex', marginTop: '-40px' }}
+          style={{ marginLeft: '35%', display: 'flex', marginTop: '-15px' }}
         />
       </CalciteLabel>
       <div
